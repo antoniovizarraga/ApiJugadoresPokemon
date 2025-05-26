@@ -16,5 +16,17 @@ namespace BL
         {
             return ManejadoraJugadoresDAL.InsertarJugador(player);
         }
+
+        /// <summary>
+        /// Función que devuelve un <see cref="Jugador"/> de la DAL por el ID pasado por parámetro. Pre: El ID del jugador debe existir en la DAL. Si no, devolverá un
+        /// <see cref="Jugador"/> con Id = -1 (Que significa que no ha sido encontrado). Post: Devuelve un <see cref="Jugador"/> relleno con los valores de la DAL.
+        /// Si no, devolverá un <see cref="Jugador"/> con Id = -1.
+        /// </summary>
+        /// <param name="id">El ID con el que buscar al <see cref="Jugador"/> en la DAL.</param>
+        /// <returns>Un <see cref="Jugador"/> relleno con los valores de la DAL. Si no, devolverá un <see cref="Jugador"/> con Id = -1.</returns>
+        public static Jugador ObtenerJugadorPorIdBL(int id)
+        {
+            return ManejadoraJugadoresDAL.ObtenerJugadorPorId(id);
+        }
     }
 }
